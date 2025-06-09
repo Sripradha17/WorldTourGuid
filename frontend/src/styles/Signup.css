@@ -1,0 +1,107 @@
+/* src/components/Signup.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signup-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.signup-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.glass-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  animation: fadeSlide 0.7s ease-out;
+}
+
+.glass-box h2 {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.about-text {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.form-control {
+  border-radius: 12px;
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid #ddd;
+}
+
+.form-control:focus {
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  border-color: #00f2fe;
+}
+
+.btn-success {
+  background: linear-gradient(to right, #00f2fe, #4facfe);
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.btn-success:hover {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+.switch-link {
+  cursor: pointer;
+  color: #00f2fe;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.switch-link:hover {
+  text-decoration: underline;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

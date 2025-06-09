@@ -1,0 +1,139 @@
+/* src/styles/Home.css */
+
+.home-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  overflow-x: hidden;
+  background-image: url("../../public/images/world.jpg");
+  background-size: cover; /* Ensures full coverage */
+  background-position: center; /* Centers image */
+  background-repeat: no-repeat;
+}
+
+.home-header {
+  margin-bottom: 3rem;
+}
+
+.glow-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #0e0e5c;
+  text-shadow: 0 0 20px #888ee1, 0 0 30px rgb(138, 145, 221);
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+  font-weight: 300;
+}
+
+.continents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.continent-card {
+  height: auto;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.continent-image {
+  width: 100%; /* Full width */
+  height: 200px; /* Fixed height */
+  object-fit: fill; /* Stretch image to fill the area */
+  border-radius: 16px; /* Match parent radius */
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.continent-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #51709faa;
+  z-index: 2;
+}
+
+.continent-card:hover .continent-image {
+  transform: scale(1.1); /* Zoom in effect */
+  filter: brightness(1.1) saturate(1.2); /* Highlight effect */
+}
+
+.continent-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top right,
+    rgba(0, 255, 255, 0.15),
+    rgba(0, 0, 0, 0.2)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.glass-overlay {
+  position: unset;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.continent-label {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #000000;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.glow-ring {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: 130%;
+  height: 130%;
+  border: 2px solid rgba(13, 191, 60, 0.4);
+  border-radius: 40%;
+  animation: glow-spin 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glow-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.05);
+  }
+}
+
+@media (max-width: 600px) {
+  .glow-title {
+    font-size: 2rem;
+  }
+
+  .continent-label {
+    font-size: 1.2rem;
+  }
+}
