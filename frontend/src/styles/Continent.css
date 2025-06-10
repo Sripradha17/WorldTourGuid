@@ -1,0 +1,59 @@
+/* Continent.css */
+
+.continent-wrapper {
+  padding: 2rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  color: #fff;
+  background-image: url("../../public/images/travel1.jpg");
+}
+
+.continent-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fbffff;
+  text-shadow: 0 0 10px #160a4b, 0 0 20px #170f5a;
+}
+
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.country-card {
+  background: rgba(10, 2, 2, 0.05);
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.country-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.country-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.country-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  color: #063502;
+}
+
+@media (max-width: 600px) {
+  .continent-title {
+    font-size: 1.8rem;
+  }
+}

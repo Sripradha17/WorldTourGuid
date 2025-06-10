@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import { onAuthStateChanged } from "firebase/auth";
 import { saveUserToBackend } from "./utils/saveUser";
 import { auth } from "./firebase";
-
+import Continent from "./components/Continent";
 
 
 function App() {
@@ -29,6 +29,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/continent/:name" element={<Continent />} />
       </Routes>
     </Router>
   );
